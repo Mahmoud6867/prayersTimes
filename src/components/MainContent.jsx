@@ -9,7 +9,6 @@ import Select from "@mui/material/Select";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
-import Avatar from "@mui/material/Avatar";
 import "moment/dist/locale/ar-ly";
 
 moment.locale("ar-ly");
@@ -319,10 +318,11 @@ function MainContent() {
             <h2>{today}</h2>
             <h1>
               {selectedCity.displayName} / {selectedCity.countryDisplayName}{" "}
-              <Avatar
+              <img
                 alt={`${selectedCity.countryDisplayName}`}
                 src={`${selectedCity.flag}`}
-                sx={{ width: 100, height: 100 }}
+                width={50}
+                height={50}
               />
             </h1>
           </div>
@@ -372,9 +372,11 @@ function MainContent() {
               return (
                 <MenuItem value={city.apiName} key={city.apiName}>
                   {city.displayName} / {city.countryDisplayName}{" "}
-                  <Avatar
+                  <img
                     alt={`${city.countryDisplayName}`}
                     src={`${city.flag}`}
+                    width={30}
+                    height={30}
                   />
                 </MenuItem>
               );
