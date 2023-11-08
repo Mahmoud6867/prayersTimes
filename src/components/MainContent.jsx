@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import moment from "moment";
 import "moment/dist/locale/ar-ly";
+import { Avatar } from "@mui/material";
 
 moment.locale("ar-ly");
 function MainContent() {
@@ -318,11 +319,10 @@ function MainContent() {
             <h2>{today}</h2>
             <h1>
               {selectedCity.displayName} / {selectedCity.countryDisplayName}{" "}
-              <img
+              <Avatar
                 alt={`${selectedCity.countryDisplayName}`}
                 src={`${selectedCity.flag}`}
-                width={50}
-                height={50}
+                sx={{ width: 56, height: 56 }}
               />
             </h1>
           </div>
@@ -372,11 +372,9 @@ function MainContent() {
               return (
                 <MenuItem value={city.apiName} key={city.apiName}>
                   {city.displayName} / {city.countryDisplayName}{" "}
-                  <img
+                  <Avatar
                     alt={`${city.countryDisplayName}`}
                     src={`${city.flag}`}
-                    width={30}
-                    height={30}
                   />
                 </MenuItem>
               );
